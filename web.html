@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/normalize.css">
+    <title>Web2</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        header {
+            height: 50px;
+
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 25px;
+
+
+        }
+
+        .wrapper-lift {
+            display: flex;
+        }
+
+        .logo img {
+            width: 200px;
+            margin-top: 10px;
+
+
+        }
+
+        .wrapper1 {
+            display: flex;
+        }
+
+        .wrapper1 a {
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            margin: 25px;
+            /* padding: 30px; */
+        }
+
+        .rwd-logo {
+            padding-top: 10px;
+            display: none;
+        }
+
+        .rwd-logo img {
+            width: 50px;
+            height: 50px;
+
+        }
+
+
+        @media screen and (max-width: 576px) {
+            .wrapper1 {
+                display: none;
+            }
+
+            .rwd-logo {
+                display: block;
+            }
+
+            .subenu {
+                display: none;
+            }
+        }
+
+        nav {
+            max-width: 100%;
+            height: 700px;
+            margin-top: 20px;
+            background: url(images/long-hair.jpg);
+            position: relative;
+            /* background-origin: content-box; */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+
+
+            /* opacity: .7; */
+        }
+
+        .nva-box {
+            /* text-align: center center; */
+            position: absolute;
+            left: 50%;
+            top: 35%;
+            transform: translate(-50%, -50%);
+            margin-top: 30px;
+
+
+        }
+
+        .logo-mid {
+            /* margin-top: 30px; */
+            text-align: center;
+
+        }
+
+        .logo-mid img {
+            width: 180px;
+            height: 180px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 72px;
+            margin: 0px;
+            text-align: center;
+
+        }
+
+        h4 {
+            color: #fff;
+            text-align: center;
+            margin: 0 0 40px 0;
+        }
+
+        @media screen and (max-width: 576px) {
+            nav {
+                height: 900px;
+            }
+
+            .nva-box {
+                max-width: 90%;
+            }
+
+            .logo-mid img {
+                width: 100px;
+                height: 100px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+        }
+
+        .box {
+            width: 600px;
+            height: 45px;
+            border: 2px solid pink;
+            background: transparent;
+        }
+
+        .form {
+            float: left;
+            width: 25%;
+            height: 45px;
+            background: url(pics_1129/icon_searchbar_location.png)center left no-repeat black;
+            color: #fff;
+            /* ++ */
+            box-sizing: border-box;
+            padding-left: 20px;
+        }
+
+        .input1 {
+            float: left;
+            width: 50%;
+            height: 45px;
+            background: black;
+            color: #fff;
+            box-sizing: border-box;
+
+        }
+
+        .input2 {
+            float: left;
+            height: 45px;
+            width: 25%;
+            background: black;
+            color: #fff;
+            background: url(pics_1129/icon_searchbar_search.png) center left no-repeat rgb(182, 82, 148);
+            flex: 1;
+        }
+
+        @media screen and (max-width: 576px) {
+            .form {
+                width: 30%;
+            }
+
+            .input1 {
+                width: 70%;
+            }
+
+            .input2 {
+                width: 100%;
+            }
+        }
+
+        .box1 {
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            height: auto;
+            background: black;
+            opacity: .8;
+            color: #fff;
+        }
+
+        .box2 {
+            padding: 20px 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .item {
+            margin: 0 25px;
+        }
+
+        .item img {
+            width: 120px;
+            height: 120px;
+        }
+
+
+        @media screen and (max-width: 576px) {
+
+            .box {
+                display: block;
+                max-width: 100%;
+            }
+
+            .box1 {
+                position: absolute;
+                left: 0px;
+                top: auto;
+                bottom: 0;
+
+            }
+
+            .box2 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .item {
+                margin: 0 25px;
+            }
+
+            .item img {
+                width: 80px;
+                height: 80px;
+            }
+
+        }
+
+        /* --container-- */
+
+        .container {
+            padding: 25px;
+        }
+
+        h2 {
+            text-align: center;
+
+        }
+
+        .content {
+            display: flex;
+            justify-content:
+                space-between;
+            box-sizing: border-box;
+            /* ++ */
+            width: 100%;
+        }
+
+        /* ++ */
+        .content .photo {
+            width: 25%;
+            padding: 10px;
+            position: relative;
+        }
+
+        .content .photo img {
+            width: 100%;
+        }
+
+        .photo-box {
+            position: absolute;
+            bottom: 10%;
+            right: -2px;
+            background: white;
+
+            border: 2px solid pink;
+            transform: translateY(-50%);
+
+        }
+
+        .photo-box .font {
+            font-size: 20px;
+            margin: 5px 30px;
+            color: rgb(252, 134, 154);
+            font-weight: bold;
+        }
+
+        .btn-group {
+            width: 100%;
+
+
+        }
+
+        .btn-group .group {
+            float: right;
+            margin-top: 10px;
+        }
+
+        .btn-group .group a {
+            width: 100px;
+            text-decoration: none;
+            font-size: 24px;
+            background: pink;
+            color: #FFF;
+            padding: 10px 30px;
+
+
+        }
+
+        @media screen and (max-width: 576px) {
+            .content {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .content .photo {
+                width: 50%;
+            }
+
+            .content .photo img {
+                width: 100%;
+            }
+        }
+
+        .container-bottom {
+            padding: 25px;
+        }
+
+        .content-bottom {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .photo-box .font {
+            font-size: 12px;
+        }
+
+        /* .content-bottom  */
+
+        .photo-bottom {
+
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .photo-bottom img {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+        }
+
+
+        /* --footer-- */
+
+        .footer-box {
+            background: #ccc;
+            margin-top: 80px;
+
+
+        }
+
+        .footer-box-main {
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-box-left img {
+            width: 200px;
+        }
+
+        .bottom-box-mid {
+            padding-top: 50px;
+
+
+        }
+
+        .footer-font {
+            color: rgb(247, 130, 149);
+            padding-top: 10px;
+        }
+
+        @media screen and (max-width: 576px) {
+            .content-bottom {
+                display: block;
+            }
+
+            .footer-box-main {
+
+                padding: 0px;
+                margin: 0px;
+            }
+
+            .footer-font {
+                display: none;
+            }
+        }
+        
+
+        /* /--footer-mid */
+        .footer-mid {
+            position: relative;
+            
+            background: url(images/slide2.jpg);
+            background-position: center;
+            height: auto;
+            opacity: .5;
+
+        }
+
+        .footer-mid img {
+            width: 100%;
+
+
+        }
+
+        .footer-mid-font {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            background-color: rgba(0, 0, 0, .5) ;
+
+        }
+
+        .footer-mid-font h1 {}
+
+        .footer-mid-font h5 {}
+
+        .footer-mid-mid {
+            align-self: center;
+            height: 150px;
+            margin: 0 100px;
+            border-right: 3px dotted white;
+
+        }
+
+        .footer-mid-bottom {
+            display: flex;
+            justify-content: center;
+           
+            align-items:  center;
+        }
+        .footer-mid-bottom-h3{
+            font-size: 24px;
+        }
+        .footer-mid-bottom-rigth{
+            padding: 0 20px;   
+        }
+        .footer-button{
+            background: #ccc;
+            text-decoration: none;
+            font-size: 16px ;
+            padding: 10px 15px;
+            color: #000;
+        }
+        @media screen and (max-width: 576px){
+            .footer-mid-font{
+                display: block;
+                width: 100%;
+            }
+           .footer-mid-bottom-h3{
+               font-size: 12px;
+           }
+           .footer-mid-bottom{
+               display: block;
+           }
+           .footer-button{
+               font-size: 12px;
+               padding: 5px 10px;
+           }
+        .footer-mid-bottom-h3{
+            text-align: center;
+        } 
+        .footer-mid-bottom-rigth{
+            text-align: center;
+            padding: 10px 0;
+        }
+        .footer-mid-mid {
+            display: none;
+        }
+        }
+        /* --footer-bottom-- */
+
+        .footer-bottom {
+           width: 100%;
+            
+        }
+        .footer-bottom-top{
+           display: flex;
+           width: 100%;
+           justify-content: center;
+           padding: 0 250px;
+        }
+        .main-bottom{
+                display: flex;
+                flex: 0 0 auto;
+        }
+        .aside-font{
+            
+        }
+
+        .info li{
+            list-style: none;
+        }
+        .apple li{
+            list-style: none;
+        }
+        .main-bottom ul li a{
+            text-decoration: none;
+            color: #000;
+        }
+        .mob-btn{
+            display: flex;
+            align-items: center;
+            margin-left: 30px ;
+            flex: 0 0 auto;
+        }
+        .mob-btn a{
+            display: inline-block;
+            text-decoration: none;
+            border: 2px solid rgb(247, 130, 149);
+            color: rgb(247, 130, 149);
+            padding: 10px 15px ;
+        }
+        @media screen and (max-width: 576px){
+            .footer-bottom-top{
+                display: block;
+                padding: 0;
+                
+            }
+            .mob-btn{
+                display: flex;
+                justify-content: center;
+            }
+            .mob-join a{
+                padding: 10px 100px ;
+            }
+        }
+
+        .footer-over{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="wrapper-lift">
+                <div class="logo">
+                    <img src="pics_1129/logo.png" alt="">
+                </div>
+                <div class="wrapper1">
+                    <a href="#">找美髮</a>
+                    <a href="#">找設計師</a>
+                    <a href="#">美髮誌</a>
+                </div>
+            </div>
+            <div class="wrapper1">
+                <a href="#">登入</a>
+                <img src="pics_1129/setting.png" alt="">
+            </div>
+            <div class="rwd-logo">
+                <img src="pics_1129/123.gif" alt="">
+                <div class="rwd-font">
+                    <ul class="subenu">
+                        <li><a href="#">找美髮</a></li>
+                        <li><a href="#">找設計師</a></li>
+                        <li><a href="#">美髮誌</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="nva-box">
+            <div class="logo-mid">
+                <img src="pics_1129/scissors.gif" alt="">
+            </div>
+            <h1>簡單預約隨時有型</h1>
+            <h4>給你最多髮型靈感及在地優秀設計師</h4>
+            <div class="box">
+                <select class="form" name="" id="">
+                    <img src="pic_1129/icon_searchbar_location.png" alt="">
+                    <option value="">所在地區</option>
+                    <option value="">北區</option>
+                    <option value="">南區</option>
+                </select>
+                <label for=""></label>
+                <input class="input1" id="所有髮型主題" name="所有髮型主題" placeholder="所有髮型主題">
+                <input class="input2" type="submit" value="去找找">
+            </div>
+        </div>
+        <div class="box1">
+            <div class="box2">
+                <div class="item">
+                    <img src="pics_1129/icon_search.png" alt="">
+                    <div>設計師作品<br>輕鬆找</div>
+                </div>
+                <div class="item">
+                    <img src="pics_1129/icon_fashion.png" alt="">
+                    <div>流行髮型<br>一手掌握</div>
+                </div>
+                <div class="item">
+                    <img src="pics_1129/icon_book.png" alt="">
+                    <div>即時溝通預約</div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+    <div class="container">
+        <h2>熱門類型</h2>
+        <div class="content">
+            <div class="photo">
+                <div class="photo-box" class="inline">
+                    <div class="font">
+                        手撥捲</div>
+                </div>
+                <img src="images/22736_8.jpg" alt="">
+            </div>
+            <div class="photo">
+                <div class="photo-box">
+                    <div class="font">
+                        手撥捲</div>
+                </div>
+                <img src="images/22736_8.jpg" alt="">
+            </div>
+            <div class="photo">
+                <div class="photo-box">
+                    <div class="font">
+                        手撥捲</div>
+                </div>
+                <img src="images/22736_8.jpg" alt="">
+            </div>
+            <div class="photo">
+                <div class="photo-box">
+                    <div class="font">
+                        手撥捲</div>
+                </div>
+                <img src="images/22736_8.jpg" alt="">
+            </div>
+
+
+        </div>
+
+        <div class="btn-group">
+            <div class="group">
+                <a href="#">more</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-bottom">
+        <h2>趨勢話題</h2>
+        <div class="content-bottom">
+            <div class="photo-bottom">
+                <img src="images/9344.jpg" alt="">
+            </div>
+            <div class="photo-bottom">
+                <img src="images/138974.jpg" alt="">
+            </div>
+            <div class="photo-bottom">
+                <img src="images/141965.jpg" alt="">
+            </div>
+
+        </div>
+        <div class="btn-group">
+            <div class="group">
+                <a href="#">more</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- --footer--- -->
+
+    <footer>
+        <div class="footer-box">
+            <div class="footer-box-main">
+                <div class="footer-box-left">
+                    <img src="images/phones.png" alt="">
+                </div>
+
+                <div class="footer-box-mid">
+                    <h2>快速找到好髮型</h2>
+                    <div class="footer-photo-mid">
+                        <div class="footer-photo">
+                            <img src="pics_1129/btn_app_ios.png" alt="">
+                            <img src="pics_1129/btn_app_android (1).png" alt="">
+                        </div>
+                        <div class="footer-font">下載並註冊後就可以開始發表作品囉!</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-mid">
+                <div class="footer-mid-font">
+                    <div class="footer-mid-left">
+                        <h5>已有</h5>
+                        <h1>635</h1>
+                        <h5>設計師</h5>
+                    </div>
+                    <div class="footer-mid-mid"></div>
+                    <div class="footer-mid-rigth">
+                        <h5>發表</h5>
+                        <h1>6321</h1>
+                        <h5>張髮型作品</h5>
+                    </div>
+                </div>
+                <div class="footer-mid-bottom">
+                    <div class="footer-mid-bottom-h3">
+                        <h3>優秀設計師募集中</h3>
+                    </div>
+                    <div class="footer-mid-bottom-rigth">
+                        <a class="footer-button" href="#">了解更多</a>
+                        <a class="footer-button" href="#">立即免費試用</a>
+                    </div>
+                </div>
+            </div>
+
+
+              <!-- --footer-bottom-- -->
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-top">
+                    <aside class="aside-font">
+                        <p>HairMap美髮地圖團隊致力於打造出最貼心實用的美髮資訊交流社群，讓美髮時光成為每個人生命中的美好時刻。</p>
+                    </aside>
+
+                    <main class="main-bottom">
+                        <ul class="info">
+
+                            <li><img src="images/email.svg" alt=""><a class="mail" href="#">聯絡我們</a></li>
+                            <li><img src="images/facebook_g.svg" alt=""><a class="facebook" href="#">粉絲專頁</a></li>
+                        </ul>
+                        <ul class="apple">
+                            <li><img src="images/ios.svg" alt=""><a class="ios" href="#">IOS</a></li>
+
+                            <li><img src="images/android.svg" alt=""><a class="android" href="#">Android</a></li>
+                        </ul>
+                    </main>
+
+                    <div class="mob-btn">
+                        <a class="mob-join" href="#">設計師加入</a>
+                    </div>
+                </div>
+                <div class="footer-line"></div>
+            </div>
+            <div class="footer-over">
+            <h3>髮弄資訊股份有限公司 © 2019. All Rights Reserved</h3>
+        </div>
+
+
+
+        </div>
+    </footer>
+</body>
+
+</html>
